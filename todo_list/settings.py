@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
+    "crispy_bootstrap4",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,11 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'todo_list.wsgi.application'
 
@@ -117,3 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
