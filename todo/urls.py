@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView,
     TagListView, TagCreateView, TagUpdateView, TagDeleteView,
-    toggle_task_status
+    TaskStatusUpdateView
 )
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     path("tasks/create/", TaskCreateView.as_view(), name="task-create"),
     path("tasks/<int:pk>/update/", TaskUpdateView.as_view(), name="task-update"),
     path("tasks/<int:pk>/delete/", TaskDeleteView.as_view(), name="task-delete"),
-    path("tasks/<int:pk>/toggle/", toggle_task_status, name="toggle-status"),
+    path("tasks/<int:pk>/toggle/", TaskStatusUpdateView.as_view(), name="toggle-status"),
 
     # Сторінка з тегами
     path("tags/", TagListView.as_view(), name="tag-list"),
