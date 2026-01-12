@@ -1,0 +1,12 @@
+<div class="sidebar border rounded bg-white mt-3">
+    <div class="list-group list-group-flush">
+        <a href="{% url 'todo:index' %}"
+           class="list-group-item list-group-item-action {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+           Home
+        </a>
+        <a href="{% url 'todo:tag-list' %}"
+           class="list-group-item list-group-item-action {% if request.resolver_match.url_name == 'tag-list' %}active{% endif %}">
+           Tags
+        </a>
+    </div>
+</div>
